@@ -1,4 +1,5 @@
 KNN
+tuned: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3, 'knn__weights': 'distance'}
 
           Model  Accuracy  Precision  Recall  F1 Score
 0  Baseline KNN    0.5166     0.5417  0.5166    0.5118
@@ -8,13 +9,20 @@ KNN
 0  Baseline KNN (SMOTE)    0.4968     0.5358  0.4968    0.4982
 1     Tuned KNN (SMOTE)    0.5331     0.5666  0.5331    0.5358
 
+=========================================================================================
+=========================================================================================
 DT
+baseline : Tree Depth : 30
+tuned: {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}
+Tuned Tree Depth: 25
 
          Model  Accuracy  Precision  Recall  F1 Score
 0  Baseline DT    0.4814     0.5822  0.4814    0.5022
 1     Tuned DT    0.5988     0.5906  0.5988    0.5626
-
+=========================================================================================
+=========================================================================================
 NB
+{'var_smoothing': np.float64(1e-06)}
 
          Model  Accuracy  Precision  Recall  F1 Score
 0  Baseline NB    0.3378     0.6591  0.3378    0.3854
@@ -28,19 +36,28 @@ NB
 0  Baseline NB (SMOTE + Tomek)    0.2847     0.6667  0.2847    0.3264
 1     Tuned NB (SMOTE + Tomek)    0.3351     0.6647  0.3351    0.3985
 
+=========================================================================================
+==========================================================================================
 LR
+{'C': 10, 'penalty': 'l2', 'solver': 'lbfgs'}
 
          Model  Accuracy  Precision  Recall  F1 Score
 0  Baseline LR    0.4091     0.6850  0.4091    0.4789
 1     Tuned LR    0.4147     0.6787  0.4147    0.4810
-
+=========================================================================================
+=========================================================================================
 RF
+tuned : {'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Average Depth: 24.69
 
          Model  Accuracy  Precision  Recall  F1 Score
 0  Baseline RF    0.5957     0.6044  0.5957    0.5295
 1     Tuned RF    0.5986     0.6023  0.5986    0.5388
 
+=========================================================================================
+=========================================================================================
 SVM
+{'svm__C': 10}
 
           Model            Accuracy  Precision  Recall  F1 Score
 0  Baseline SVM(Linear)    0.4261     0.5523  0.4261    0.4601
